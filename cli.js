@@ -51,7 +51,7 @@ async function main() {
     execSync("npx rimraf ./.git");
     fs.rmdirSync(path.join(projectPath, "bin"), { recursive: true });
 
-    console.log("The installation is done, this is ready to use !");
+    console.log("Installation complete!");
   } catch (error) {
     console.log(error);
   }
