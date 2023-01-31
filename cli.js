@@ -12,7 +12,7 @@ const path = require("path");
 const fs = require("fs");
 
 if (process.argv.length < 3) {
-  console.log("You have to provide a name to your app.");
+  console.log("Please provide an application name.");
   console.log("For example :");
   console.log("    npx carbon-for-contentful my-app");
   process.exit(1);
