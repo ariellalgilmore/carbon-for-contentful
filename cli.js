@@ -29,7 +29,7 @@ try {
 } catch (err) {
   if (err.code === "EEXIST") {
     console.log(
-      `The file ${projectName} already exist in the current directory, please give it another name.`
+      `The name ${projectName} already exists in the current directory, please choose another name.`
     );
   } else {
     console.log(err);
