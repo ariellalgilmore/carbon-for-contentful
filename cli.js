@@ -14,7 +14,7 @@ const fs = require("fs");
 if (process.argv.length < 3) {
   console.log("Please provide an application name.");
   console.log("For example :");
-  console.log("    npx carbon-for-contentful my-app");
+  console.log("    npx carbon-for-contentful-starter my-content-app");
   process.exit(1);
 }
 
@@ -22,7 +22,7 @@ const projectName = process.argv[2];
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
 const git_repo =
-  "https://github.com/carbon-design-system/carbon-for-contentful";
+  "https://github.com/carbon-design-system/carbon-for-contentful-starter";
 
 try {
   fs.mkdirSync(projectPath);
@@ -40,7 +40,7 @@ try {
 async function main() {
   try {
     console.log("Downloading files...");
-    execSync(`git clone --depth 1 ${git_repo} ${projectPath}`);
+    execSync(`npx create-next-app@latest ${projectName} --example ${git_repo}`);
 
     process.chdir(projectPath);
 
