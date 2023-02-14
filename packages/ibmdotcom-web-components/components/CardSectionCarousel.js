@@ -17,13 +17,18 @@ const Card = dynamic(import("./Card"), { ssr: false });
 // TODO: check if this should be DDSTextCTA
 const LinkWithIcon = dynamic(import("./LinkWithIcon"), { ssr: false });
 
+
 export default function ContentBlock(content) {
-  const { heading, copy, linkWithIcon, cards } = content?.fields || {};
+  const { heading, copy, cards, linkWithIcon } = content?.fields || {};
+  const linkWithIconFields = {
+    fields: { ...linkWithIcon?.fields, slot: "footer" },
+  };
+  
   return (
     <DDSCardSectionCarousel>
       <DDSContentSectionHeading>{heading}</DDSContentSectionHeading>
       <DDSContentSectionCopy>{copy}</DDSContentSectionCopy>
-      {linkWithIcon && <LinkWithIcon slot="footer" {...linkWithIcon} />}
+      {linkWithIcon && <LinkWithIcon {...linkWithIconFields} />}
       <DDSCarousel>
         {cards.map((card, index) => {
           return <Card {...card} key={index} />;

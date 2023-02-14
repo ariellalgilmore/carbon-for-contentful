@@ -19,7 +19,8 @@ export default function VideoPlayer(content) {
     hideCaption,
     thumbnail,
     aspectRatio,
-    backgroundMode
+    backgroundMode,
+    slot
   } = content?.fields || {};
   return (
     <>
@@ -32,6 +33,7 @@ export default function VideoPlayer(content) {
       thumbnail={thumbnail}
       aspectRatio={aspectRatio}
       background-mode={backgroundMode}
+      slot={slot}
       ></DDSVideoPlayerContainer>
       {playingMode === 'lightbox' ? 
       <DDSLightboxVideoPlayerContainer></DDSLightboxVideoPlayerContainer> : ``}

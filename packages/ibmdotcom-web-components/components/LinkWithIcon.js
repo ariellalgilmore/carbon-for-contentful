@@ -43,12 +43,14 @@ export default function LinkWithIcon(content) {
     href,
     text,
     icon,
+    slot
   } = content?.fields || {};
   return (
     <DDSLinkWithIcon
       iconPlacement={iconPlacement}
       disabled={disabled}
       href={href}
+      slot={slot}
       >
       {text} {iconMap[icon]}
     </DDSLinkWithIcon>

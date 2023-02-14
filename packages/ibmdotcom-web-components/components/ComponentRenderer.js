@@ -25,6 +25,7 @@ const ContentGroupPictograms = dynamic(import("./ContentGroupPictograms"), {
 const ContentItem = dynamic(import("./ContentItem"), { ssr: false });
 const Card = dynamic(import("./Card"), { ssr: false });
 const Leadspace = dynamic(import("./Leadspace"), { ssr: false });
+const LinkList = dynamic(import("./LinkList"), { ssr: false });
 const LinkWithIcon = dynamic(import("./LinkWithIcon"), { ssr: false });
 const TableOfContents = dynamic(import("./TableOfContents"), { ssr: false });
 const CardSectionCarousel = dynamic(import("./CardSectionCarousel"), {
@@ -51,6 +52,7 @@ const map = {
   "dds-card-section-carousel": CardSectionCarousel,
   "dds-background-media": BackgroundMedia,
   "dds-leadspace": Leadspace,
+  "dds-link-list": LinkList,
   "dds-link-with-icon": LinkWithIcon,
   "dds-table-of-contents": TableOfContents,
   "dds-video-player-container": VideoPlayer,

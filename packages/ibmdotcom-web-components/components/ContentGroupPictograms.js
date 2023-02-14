@@ -32,8 +32,11 @@ const pictoMap = {
 };
 
 export default function ContentGroupPictograms(content) {
-  const { heading, copy, pictogramItems } = content?.fields || {};
+  const { heading, copy, pictogramItems, linkWithIcon } = content?.fields || {};
 
+  const linkWithIconFields = {
+    fields: { ...linkWithIcon?.fields, slot: "footer" },
+  };
   return (
     <DDSContentGroupPictograms>
       <DDSContentGroupHeading>{heading}</DDSContentGroupHeading>
@@ -69,7 +72,7 @@ export default function ContentGroupPictograms(content) {
             </svg>
             <DDSContentItemHeading>{heading}</DDSContentItemHeading>
             <DDSContentItemCopy>{copy}</DDSContentItemCopy>
-            {linkWithIcon && <LinkWithIcon slot="footer" {...linkWithIcon} />}
+            {linkWithIcon && <LinkWithIcon {...linkWithIconFields} />}
           </DDSPictogramItem>
         );
       })}

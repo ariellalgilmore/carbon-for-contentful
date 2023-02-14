@@ -32,12 +32,17 @@ export default function ContentGroupSimple(content) {
     imageItems,
     videoPlayer
   } = content?.fields || {};
+
+  const videoPlayerFields = {
+    fields: { ...videoPlayer?.fields, slot: "media" },
+  };
+  
   return (
     <DDSContentGroupSimple>
       <DDSContentGroupHeading>{heading}</DDSContentGroupHeading>
       <DDSContentGroupCopy>{copy}</DDSContentGroupCopy>
       {videoPlayer?.length ?
-        VideoPlayer(...videoPlayer) : 
+        VideoPlayer(...videoPlayerFields) : 
         <DDSImage
           slot="media"
           defaultSrc={"https:" + defaultSrc}
