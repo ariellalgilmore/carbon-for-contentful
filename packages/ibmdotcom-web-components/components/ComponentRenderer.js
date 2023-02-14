@@ -30,6 +30,22 @@ const TableOfContents = dynamic(import("./TableOfContents"), { ssr: false });
 const CardSectionCarousel = dynamic(import("./CardSectionCarousel"), {
   ssr: false,
 });
+const HorizontalRule = dynamic(import("./HorizontalRule"), { ssr: false });
+const Image = dynamic(import("./Image"), {
+  ssr: false,
+});
+const LeadspaceWithSearch = dynamic(import("./LeadspaceWithSearch"), {
+  ssr: false,
+});
+const Quote = dynamic(import("./Quote"), {
+  ssr: false,
+});
+const SearchWithTypeahead = dynamic(import("./SearchWithTypeahead"), {
+  ssr: false,
+});
+const TabsExtended = dynamic(import("./TabsExtended"), {
+  ssr: false,
+});
 const VideoPlayer = dynamic(import("./VideoPlayer"), {
   ssr: false,
 });
@@ -50,9 +66,15 @@ const map = {
   "dds-card-section-with-images": CardSection,
   "dds-card-section-carousel": CardSectionCarousel,
   "dds-background-media": BackgroundMedia,
+  "dds-horizontal-rule": HorizontalRule,
+  "dds-image": Image,
   "dds-leadspace": Leadspace,
   "dds-link-with-icon": LinkWithIcon,
+  "dds-leadspace-with-search": LeadspaceWithSearch,
+  "dds-quote": Quote,
+  "dds-search-with-typeahead": SearchWithTypeahead,
   "dds-table-of-contents": TableOfContents,
+  "dds-tabs-extended": TabsExtended,
   "dds-video-player-container": VideoPlayer,
   themeZone: ThemeZone,
 };

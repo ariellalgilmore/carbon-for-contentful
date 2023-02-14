@@ -6,35 +6,26 @@
  * This source code is licensed under the Apache-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import dynamic from "next/dynamic";
-import DDSBackgroundMedia from "@carbon/ibmdotcom-web-components/es/components-react/background-media/background-media";
+
+import DDSImage from "@carbon/ibmdotcom-web-components/es/components-react/image/image";
 import DDSImageItem from "@carbon/ibmdotcom-web-components/es/components-react/image/image-item";
 
-const VideoPlayer = dynamic(import("./VideoPlayer"), { ssr: false });
+export default function Image(content) {
+  const { alt, defaultSrc, border, heading, copy, lightbox, imageItems } =
+    content?.fields || {};
 
-export default function BackgroundMedia(content) {
-  const {
-    gradientDirection,
-    mobilePosition,
-    altText,
-    defaultSrc,
-    imageItems,
-    opacity,
-    slot,
-    videoPlayer,
-  } = content?.fields || {};
   const { url } = defaultSrc?.fields?.file || {};
   return (
-    <DDSBackgroundMedia
-      gradient-direction={gradientDirection}
-      mobile-position={mobilePosition}
-      alt={altText}
-      default-src={"https:" + url}
-      opacity={opacity}
-      slot={slot}
+    <DDSImage
+      alt={alt}
+      defaultSrc={"https:" + url}
+      border={border}
+      heading={heading}
+      copy={copy}
+      lightbox={lightbox}
     >
-      {videoPlayer?.length
-        ? VideoPlayer(...videoPlayer)
+      {!imageItems
+        ? undefined
         : imageItems.map((image, index) => {
             const { minWidth } = image.fields;
             const { url } = image.fields.image.fields.file;
@@ -47,6 +38,6 @@ export default function BackgroundMedia(content) {
               ></DDSImageItem>
             );
           })}
-    </DDSBackgroundMedia>
+    </DDSImage>
   );
 }
