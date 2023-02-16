@@ -24,6 +24,7 @@ const ContentGroupPictograms = dynamic(import("./ContentGroupPictograms"), {
 });
 const ContentItem = dynamic(import("./ContentItem"), { ssr: false });
 const Card = dynamic(import("./Card"), { ssr: false });
+const ExpressiveModal = dynamic(import("./ExpressiveModal"), { ssr: false });
 const Leadspace = dynamic(import("./Leadspace"), { ssr: false });
 const LinkWithIcon = dynamic(import("./LinkWithIcon"), { ssr: false });
 const TableOfContents = dynamic(import("./TableOfContents"), { ssr: false });
@@ -37,6 +38,7 @@ const Image = dynamic(import("./Image"), {
 const LeadspaceWithSearch = dynamic(import("./LeadspaceWithSearch"), {
   ssr: false,
 });
+const PictogramItem = dynamic(import("./PictogramItem"), { ssr: false });
 const Quote = dynamic(import("./Quote"), {
   ssr: false,
 });
@@ -55,6 +57,7 @@ const ThemeZone = dynamic(import("./ThemeZone"), { ssr: false });
 // import exploreMore from "../data/exploreMore.json";
 
 const map = {
+  "dds-background-media": BackgroundMedia,
   "dds-content-block": ContentBlock,
   "dds-card": Card,
   "dds-content-item": ContentItem,
@@ -65,12 +68,13 @@ const map = {
   "dds-card-group": CardGroup,
   "dds-card-section-with-images": CardSection,
   "dds-card-section-carousel": CardSectionCarousel,
-  "dds-background-media": BackgroundMedia,
+  "dds-expressive-modal": ExpressiveModal,
   "dds-horizontal-rule": HorizontalRule,
   "dds-image": Image,
   "dds-leadspace": Leadspace,
   "dds-link-with-icon": LinkWithIcon,
   "dds-leadspace-with-search": LeadspaceWithSearch,
+  "dds-pictogram-item": PictogramItem,
   "dds-quote": Quote,
   "dds-search-with-typeahead": SearchWithTypeahead,
   "dds-table-of-contents": TableOfContents,
