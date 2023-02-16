@@ -42,7 +42,7 @@ export default function ContentGroupSimple(content) {
       <DDSContentGroupHeading>{heading}</DDSContentGroupHeading>
       <DDSContentGroupCopy>{copy}</DDSContentGroupCopy>
       {videoPlayer?.length ?
-        VideoPlayer(...videoPlayerFields) : 
+        <VideoPlayer {...videoPlayerFields} /> : 
         <DDSImage
           slot="media"
           defaultSrc={"https:" + defaultSrc}
